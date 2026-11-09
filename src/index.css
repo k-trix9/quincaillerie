@@ -2069,6 +2069,173 @@ tbody tr:hover {
 }
 
 /* ================================================================
+   MODERN VISUAL REFINEMENT
+=============================================================== */
+
+:root {
+    --bg: #f1f3f5;
+    --surface: #ffffff;
+    --surface-muted: #f7f8fa;
+    --sidebar: #121416;
+    --sidebar-hover: #202428;
+    --sidebar-border: #2a2e33;
+    --brand: #d8a13b;
+    --brand-dark: #a66f16;
+    --brand-soft: #fff8e8;
+    --text: #17191c;
+    --text-muted: #68717c;
+    --text-soft: #98a0aa;
+    --border: #dfe3e8;
+    --border-soft: #edf0f2;
+    --radius-sm: 10px;
+    --radius: 16px;
+    --radius-lg: 22px;
+    --shadow-sm: 0 1px 2px rgba(23, 25, 28, 0.04), 0 4px 14px rgba(23, 25, 28, 0.03);
+    --shadow: 0 14px 34px rgba(23, 25, 28, 0.09);
+    --sidebar-width: 238px;
+}
+
+body {
+    background: linear-gradient(180deg, #f7f8f9 0%, var(--bg) 100%);
+}
+
+button,
+a,
+input,
+select,
+textarea {
+    transition: border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.sidebar {
+    background: linear-gradient(180deg, #151719 0%, #101112 100%);
+}
+
+.sidebar-logo {
+    height: 82px;
+    letter-spacing: 0.08em;
+}
+
+.sidebar-logo .logo-mark,
+.auth-brand .logo-mark,
+.landing-brand .logo-mark {
+    background: linear-gradient(145deg, #e7b85b 0%, #b7791f 100%);
+    box-shadow: 0 8px 22px rgba(216, 161, 59, 0.24);
+}
+
+.sidebar nav {
+    padding: 22px 12px 28px;
+    gap: 5px;
+}
+
+.sidebar nav a {
+    padding: 11px 14px;
+    border: 1px solid transparent;
+}
+
+.sidebar nav a.active {
+    background: rgba(216, 161, 59, 0.16);
+    border-color: rgba(216, 161, 59, 0.24);
+    color: #f2c56a;
+    box-shadow: none;
+}
+
+.dashboard-content,
+.page {
+    padding: 36px;
+}
+
+.dashboard-header {
+    margin-bottom: 32px;
+}
+
+.dashboard-header p,
+.eyebrow {
+    color: var(--brand-dark);
+    letter-spacing: 0.16em;
+}
+
+.dashboard-header h1,
+.page h1 {
+    font-size: clamp(28px, 3vw, 36px);
+    letter-spacing: -0.04em;
+}
+
+.date-pill {
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.stat-card,
+.dashboard-card,
+.table-container,
+.product-card,
+.pos-item,
+.pos-cart,
+.user-form {
+    border-color: rgba(214, 219, 225, 0.9);
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-card {
+    padding: 24px;
+    border-radius: var(--radius);
+}
+
+.stat-card:hover,
+.product-card:hover,
+.pos-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.stat-icon,
+.pos-item .pos-emoji {
+    background: var(--brand-soft);
+    border: 1px solid rgba(216, 161, 59, 0.18);
+}
+
+.dashboard-card,
+.pos-cart {
+    padding: 26px;
+}
+
+.dashboard-card h2,
+.pos-cart h2 {
+    letter-spacing: -0.025em;
+}
+
+.btn {
+    border-radius: 11px;
+    padding: 11px 17px;
+}
+
+.btn-primary {
+    background: linear-gradient(145deg, #e7b85b 0%, #b7791f 100%);
+    box-shadow: 0 8px 18px rgba(166, 111, 22, 0.2);
+}
+
+.btn-primary:hover {
+    filter: none;
+    transform: translateY(-1px);
+    box-shadow: 0 11px 22px rgba(166, 111, 22, 0.25);
+}
+
+.table-container,
+.product-card,
+.modal {
+    border-radius: var(--radius);
+}
+
+thead {
+    background: #fafbfc;
+}
+
+th {
+    letter-spacing: 0.1em;
+}
+
+/* ================================================================
    USER MANAGEMENT (ADMIN)
 =============================================================== */
 
@@ -2129,4 +2296,29 @@ tbody tr:hover {
     width: auto;
     min-width: 120px;
     padding: 8px 10px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-content,
+    .page {
+        padding: 24px 20px;
+    }
+
+    .dashboard-header h1,
+    .page h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-content,
+    .page {
+        padding: 20px 16px;
+    }
+
+    .stat-card,
+    .dashboard-card,
+    .pos-cart {
+        padding: 20px;
+    }
 }
